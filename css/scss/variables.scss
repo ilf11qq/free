@@ -1,0 +1,43 @@
+$primaryColor: #181818;
+$secondColor: white;
+
+
+$desktop: 1200px;
+$largeTablet: 992px;
+$tablet: 768px;
+$mobile: 480px;
+$smallMobile: 360px;
+.container {
+    max-width: 1140px;
+    padding: 0px 15px;
+    margin: 0 auto;
+    height: 100%;
+}
+.body {
+    color: $primaryColor;
+}
+@media (max-width: $desktop) {
+    .container {
+        max-width: 930px;
+    }
+}
+@media (max-width: $largeTablet) {
+    .container {
+        max-width: 690px;
+    }
+}
+@media (max-width: $tablet) {
+    .container {
+        max-width: 510px;
+    }
+}
+@media (max-width: $mobile) {
+    .container {
+        max-width: 360px;
+    }
+}
+@media (max-width: $smallMobile) {
+    .container {
+        max-width: 289px;
+    }
+}

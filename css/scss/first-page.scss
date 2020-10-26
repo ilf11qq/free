@@ -1,0 +1,208 @@
+.first-page {
+    height: 100vh;
+    background: url(../media/background-images/first-page-background.png) center no-repeat;
+    background-size: cover;
+    &__content {
+        width: 55%;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    &__title {
+        background-color: $secondColor;
+        display: inline;
+        font-size: 55px;
+        line-height: 100%;
+    }
+    &__buttons {
+        display: flex;
+        margin-top: 45px;
+    }
+    &__button {
+        background-color: $secondColor;
+        border-radius: 40px;
+        padding: 19px 47px;
+        font-size: 18px;
+        line-height: 140%;
+        color: $primaryColor;
+        text-decoration: none;
+        transition: .3s;
+        &:hover {
+            transform: scale(1.1);
+        }
+        &:first-child {
+            margin-right: 30px;
+        }
+    }
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 32px;
+    &__left {
+        display: flex;
+        align-items: center;
+    }
+    &__title {
+        margin-left: 22px;
+        color: $secondColor;
+        max-width: 193px;
+    }
+    &__social {
+        justify-self: end;
+    }
+}
+.social {
+    &__links {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__link {
+        width: 36px;
+        height: 36px;
+        border: 1px solid #FFFFFF;
+        border-radius: 100%;
+        transition: .3s;
+        &_facebook {
+            background: url(../media/background-images/facebook-logo.svg) center no-repeat;
+        }
+        &_instagramm {
+            background: url(../media/background-images/instagramm-logo.svg) center no-repeat;
+        }
+        &_phone {
+            border-radius: 15px;
+            width: 204px;
+            padding: 7px 0px;
+            font-size: 16px;
+            line-height: 140%;
+            text-decoration: none;
+            text-align: center;
+            color: $secondColor;
+        }
+        &:not(:last-child) {
+            margin-right: 28px;
+        }
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+.burger {
+    display: none;
+    &__icon {
+        height: 18px;
+        width: 30px;
+        position: relative;
+        z-index: 100;
+        span {
+            position: absolute;
+            background-color: black;
+            top: 8px;
+            height: 2px;
+            width: 30px;
+            transition: .3s;
+        }
+        &::before,
+        &::after {
+            position: absolute;
+            background-color: black;
+            height: 2px;
+            width: 30px;
+            content: "";
+            transition: .3s;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+             bottom: 0;
+        }
+        &--active {
+            span {
+                opacity: 0;
+            }
+            &::before {
+                top: 8px;
+                transform: rotate(45deg);
+            }
+            &::after {
+                bottom: 8px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    &__nav {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        padding:32px 0px 97px 40px;
+        height: 100vh;
+        background: white;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        transition: .3s;
+        top: -120vh;
+        z-index: 10;
+        &--active {
+            top: 0;
+        }
+    }
+    &__internal-links {
+        display: flex;
+        flex-direction: column;
+        flex: 0 2 50%;
+        a {
+            text-decoration: none;
+            font-size: 45px;
+            line-height: 100%;
+            color: $primaryColor;
+            &:not(:last-child) {
+                margin-bottom: 35px;
+            }
+        }
+    }
+    &__social {
+        display: flex;
+    }
+    &__facebook {
+        background: url(../media/background-images/facebook-logo-black.svg) center no-repeat;
+        background-size: cover;
+        width: 36px;
+        height: 36px;
+        margin-right: 18px;
+    }
+    &__instagramm {
+        background: url(../media/background-images/instagramm-logo-black.svg) center no-repeat;
+        background-size: cover;
+        width: 36px;
+        height: 36px;
+    }
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+    }
+    &__contact {
+        font-size: 20px;
+        line-height: 110%;
+        color: $primaryColor;
+        text-decoration: none;
+    }
+}
+.popup {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@media (max-width: $largeTablet) {
+    .social__links {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+}
