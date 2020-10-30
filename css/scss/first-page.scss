@@ -9,10 +9,11 @@
         transform: translateY(-60%);
     }
     &__title {
-        background-color: $secondColor;
+        background-color: rgba(255, 255, 255, .5);
         display: inline;
         font-size: 55px;
-        line-height: 100%;
+        line-height: 110%;
+        white-space: pre-wrap;
     }
     &__buttons {
         display: flex;
@@ -141,7 +142,7 @@
         padding:32px 0px 97px 40px;
         height: 100vh;
         background: white;
-        position: absolute;
+        position: fixed;
         left: 0;
         width: 100%;
         transition: .3s;
@@ -195,7 +196,7 @@
 .popup {
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     top: 0;
     left: 0;
@@ -322,7 +323,7 @@
             width: 100%;
         }
         &__title {
-            font-size: 32px;
+            font-size: 27px;
         }
         &__buttons {
             flex-direction: column;
@@ -348,5 +349,10 @@
     .header__title {
         margin-right: 5px;
         padding-right: 5px;
+    }
+}
+@media (min-width: $mobile) and (max-width: $tablet) {
+    .first-page__button {
+        padding: 19px 30px;
     }
 }

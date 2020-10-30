@@ -13,8 +13,15 @@ $smallMobile: 360px;
     margin: 0 auto;
     height: 100%;
 }
-.body {
+body {
     color: $primaryColor;
+    font-size: 18px;
+}
+.body-overflow-hidden {
+    overflow: hidden;
+}
+.scroll {
+    scroll-behavior: smooth;
 }
 @media (max-width: $desktop) {
     .container {
