@@ -45,21 +45,38 @@
                 <h1 class="first-page__title">Разработка уникального фирменного стиля командой экспертов в срок от 10-ти дней</h1>
                 <div class="first-page__buttons">
                     <a href="" class="first-page__button">Портфолио</a>
-                    <a href="" class="first-page__button">Оставить заявку</a>
+                    <div class="first-page__button first-page__submit">Оставить заявку</div>
                 </div>
             </div>
             <div class="popup">
                 <div class="popup__content">
                     <p>Оставить заявку</p>
                     <form action="" class="popup__form">
-                        <input type="text" class="popup__name">
-                        <input type="number" name="" id="" class="popup__number">
-                        <input type="checkbox" name="" id="">
+                        <input type="text" class="popup__name" placeholder="Ваше имя">
+                        <input type="tel" class="popup__number" placeholder="+7 (999) 999-99-99">
+                        <p class="popup__agreement">
+                            <input type="checkbox" name="" id=""><span>Я принимаю <a href="#">условия передачи персональных данных</a></span>
+                        </p>
+                        <button class="popup__button">Оставить заявку</button>
                     </form>
+                    <div class="popup__close"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-style">
+        <div class="container">
+            <h2>Что такое фирменный стиль</h2>
+            <div class="about-style__content">
+                <div class="about-style__image"><img src="media/content-images/about-style.png" alt=""></div>
+                <div class="about-style__text">
+                    <p>Это набор тех уникальных «признаков», по которым клиент отличит вас от других компаний. Фирменный стиль отражает миссию бренда, ценности, является способом его идентификации, формирует определённое восприятие в коммуникации с потребителями.</p>
+                    <p>В идеале разработка корпоративного стиля должна происходить одновременно с созданием бизнеса и формированием его фундаментальных идей. Есть и второй вариант: бизнес существует определенное время и ему нужен перезапуск - это называется редизайн или ребрендинг: в мире жёсткой конкуренции важно быть «в тренде», успевать за изменениями в поведениях покупателя и “говорить” с ним на одном языке.</p>
                 </div>
             </div>
         </div>
     </section>
     <script src="js/script.js"></script>
+    <script src="js/popup.js"></script>
 </body>
 </html>

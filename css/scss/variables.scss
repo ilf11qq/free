@@ -38,6 +38,6 @@ $smallMobile: 360px;
 }
 @media (max-width: $smallMobile) {
     .container {
-        max-width: 289px;
+        max-width: calc(100% - 30px);
     }
 }

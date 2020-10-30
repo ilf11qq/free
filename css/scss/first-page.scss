@@ -6,7 +6,7 @@
         width: 55%;
         position: relative;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-60%);
     }
     &__title {
         background-color: $secondColor;
@@ -27,6 +27,7 @@
         color: $primaryColor;
         text-decoration: none;
         transition: .3s;
+        cursor: pointer;
         &:hover {
             transform: scale(1.1);
         }
@@ -198,21 +199,154 @@
     z-index: 1000;
     top: 0;
     left: 0;
+    transition: .3s;
     background-color: rgba(18, 18, 18, .8);
+    transform: scale(0);
+    &--active {
+        transform: scale(1);
+    }
     &__content {
-        position: absolute;
-        top: 20%;
-        right: 33.33%;
-        width: 33.33%;
-        height: 60%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        padding: 50px 55px;
+        max-width: 650px;
         background-color: white;
+        p {
+            font-size: 38px;
+            line-height: 110%;
+            color: $primaryColor;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 30px;
+    }
+    &__name {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    &__number {
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    &__agreement {
+        margin-bottom: 48px;
+        input {
+            border: 1px solid $primaryColor;
+            border-radius: 10px;
+        }
+        span {
+            font-size: 18px;
+            line-height: 140%;
+            color: $primaryColor;
+            a {
+                text-decoration: none;
+                color: $primaryColor;
+            }
+        }
+    }
+    &__button {
+        font-size: 16px;
+        line-height: 140%;
+        padding: 10px;
+        width: 50%;
+        background: #2B59C3;
+        color: $secondColor;
+        border-radius: 40px;
+    }
+    &__close {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: -40px;
+        right: -40px;
+        transition: .3s;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.1);
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;  
+            width: 100%;
+            height: 2px;
+            background-color: $secondColor;
+        }
+        &::before {
+            transform: rotate(45deg);
+            top: 14px;
+        }
+        &::after {
+            transform: rotate(-45deg);
+            bottom: 14px;
+        }
+    }
+}
+@media (max-width: $desktop) {
+    .first-page__title {
+        font-size: 45px;
     }
 }
 @media (max-width: $largeTablet) {
+    .first-page__content {
+        width: 80%;
+    }
     .social__links {
         display: none;
     }
     .burger {
         display: block;
+    }
+}
+@media (max-width: $tablet) {
+    .first-page__title {
+        font-size: 37px;
+    }
+    .popup {
+        &__close {
+            right: 0px;
+        }
+    }
+}
+@media (max-width: $mobile) {
+    .first-page {
+        &__content {
+            width: 100%;
+        }
+        &__title {
+            font-size: 32px;
+        }
+        &__buttons {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &__button:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    .burger__internal-links a {
+        font-size: 35px;
+    }
+    .popup {
+        padding: 0px;
+        &__content {
+            p {
+                font-size: 32px;
+            }
+            max-width: 260px;
+            padding: 20px 15px;
+        }
+    }
+    .header__title {
+        margin-right: 5px;
+        padding-right: 5px;
     }
 }

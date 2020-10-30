@@ -1,0 +1,48 @@
+.about-style {
+    padding-top: 100px;
+    h2 {
+        font-size: 38px;
+        line-height: 110%;
+        color: $primaryColor;
+        margin-bottom: 15px;
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+    }
+    &__image {
+        margin-right: 30px;
+        img {
+            max-width: 100%;
+        }
+    }
+    &__text {
+        p {
+            font-size: 18px;
+            line-height: 140%;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+        flex: 0 0 35%;
+    }
+}
+@media (max-width: $largeTablet) {
+    .about-style {
+        &__content {
+            flex-direction: column;
+        }
+        &__image {
+            flex: 0 0 100%;
+            margin-right: 0px;
+        }
+        &__text {
+            flex: 0 0 100%;
+        }
+    }
+}
+@media (max-width: $mobile) {
+    .about-style {
+        padding-top: 20px;
+    }
+}
