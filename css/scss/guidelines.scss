@@ -1,0 +1,140 @@
+.guidelines {
+    padding-top: 100px;
+    h2 {
+        font-size: 38px;
+        line-height: 110%;
+        color: $primaryColor;
+    }
+    &__content {
+        display: flex;
+        flex-direction: row;
+    }
+    &__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 20px;
+        img {
+            max-width: 100%;
+        }
+        p {
+            font-size: 18px;
+            line-height: 140%;
+        }
+        &:first-child {
+            margin-right: 15px;
+            flex: 0 0 60%;
+        }
+    }
+    &__selling-text {
+        padding: 10px 14px;
+        background: #2B59C3;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        h3 {
+            font-size: 26px;
+            line-height: 110%;
+            color: $secondColor;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 140%;
+            color: $secondColor;
+        }
+    }
+    &__form {
+        padding-top: 50px;
+        p {
+            font-size: 26px;
+            line-height: 110%;
+            &:first-child {
+                font-size: 38px;
+            }
+            &:last-child {
+                font-size: 18px;
+                order: 2;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            max-width: 900px;
+            * {
+                margin-bottom: 20px;
+            }
+            input {
+                flex: 0 0 30%;
+                border: 1px solid #181818;
+                box-sizing: border-box;
+                padding: 10px 20px;
+                border-radius: 10px;
+            }
+            button {
+                background: #2B59C3;
+                color: $secondColor;
+                padding: 10px;
+                border-radius: 40px;
+                order: 1;
+                flex-grow: 0.5;
+                transition: .3s;
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+}
+@media (max-width: $largeTablet) {
+    .guidelines {
+        &__content {
+            flex-direction: column;
+        }
+        &__column {
+            &:first-child {
+                margin-right: 0px;
+            }
+        }
+    }
+}
+@media (max-width: $tablet) {
+    .guidelines__form {
+        p {
+            font-size: 20px;
+            &:first-child {
+                font-size: 32px;
+            }
+            &:last-child {
+                order: 1;
+            }
+        }
+        form button {
+            order: 2;
+        }
+    }
+}
+@media (max-width: $mobile) {
+    .guidelines {
+        padding: 20px;
+        &__selling-text {
+            h3 {
+                font-size: 20px;
+                line-height: 110%;
+            }
+            p {
+                font-size: 15px;
+                line-height: 140%;
+            }
+        }
+        &__column {
+            p {
+                font-size: 15px;
+                line-height: 140%;
+            }
+        }
+    }
+}
