@@ -1,10 +1,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const cleanCSS = require('gulp-clean-css');
-const imageMin = require('gulp-imagemin');
-const imgCompress = require('imagemin-jpeg-recompress');
 //const browserSync = require('browser-sync');
-//const concat = require('gulp-concat');
+const concat = require('gulp-concat');
 
 
 function style () {
@@ -12,29 +10,10 @@ function style () {
     pipe(sass()).pipe(cleanCSS()).
     pipe(gulp.dest('css'));
 }
-
-function minBackgroundImg () {
-    return gulp.src('media/img/background-images/*')
-    .pipe(imageMin([
-        imageMin.gifsicle(),
-        imageMin.optipng(),
-        imageMin.svgo()
-      ]))
-    .pipe(gulp.dest('media/background-images'))
-};
-function minContentImg () {
-    return gulp.src('media/img/content-images/*')
-    .pipe(imageMin([
-        imageMin.gifsicle(),
-        imageMin.optipng(),
-        imageMin.svgo()
-      ]))
-    .pipe(gulp.dest('media/content-images'))
-};
-function minIMG () {
-    minBackgroundImg();
-    minContentImg();
+function concatJS () {
+    return gulp.src('js/js/*')
+    .pipe(concat('script.js')).pipe(gulp.dest('js/'));
 }
 
-exports.minIMG = minIMG;
+exports.concatJS = concatJS;
 exports.style = style;
