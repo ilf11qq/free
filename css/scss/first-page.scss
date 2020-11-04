@@ -250,6 +250,7 @@
             a {
                 text-decoration: none;
                 color: $primaryColor;
+                color: blue;
             }
         }
     }
@@ -261,6 +262,8 @@
         background: #2B59C3;
         color: $secondColor;
         border-radius: 40px;
+        cursor: pointer;
+        outline: none;
     }
     &__close {
         position: absolute;
